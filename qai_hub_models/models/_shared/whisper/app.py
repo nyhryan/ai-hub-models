@@ -191,7 +191,7 @@ class WhisperApp:
             decoded_tokens.append(int(next_token))
 
         tokenizer = whisper.decoding.get_tokenizer(
-            multilingual=False, language="en", task="transcribe"
+            multilingual=False, language="ko", task="transcribe"
         )
 
         text = tokenizer.decode(decoded_tokens[1:])  # remove TOKEN_SOT

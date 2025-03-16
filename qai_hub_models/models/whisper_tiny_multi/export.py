@@ -17,7 +17,7 @@ import qai_hub as hub
 import torch
 
 from qai_hub_models.models.common import ExportResult, Precision, TargetRuntime
-from qai_hub_models.models.whisper_tiny_en import Model
+from qai_hub_models.models.whisper_tiny_multi import Model
 from qai_hub_models.utils.args import export_parser, get_model_kwargs
 from qai_hub_models.utils.base_model import BaseModel
 from qai_hub_models.utils.compare import torch_inference
@@ -88,7 +88,7 @@ def export_model(
             * An InferenceJob containing metadata about the inference job (None if inferencing skipped).
             * A ProfileJob containing metadata about the profile job (None if profiling skipped).
     """
-    model_name = "whisper_tiny_en"
+    model_name = "whisper_tiny_multi"
     output_path = Path(output_dir or Path.cwd() / "build" / model_name)
     if not device and not chipset:
         hub_device = hub.Device("Samsung Galaxy S24 (Family)")
@@ -103,8 +103,8 @@ def export_model(
             raise ValueError(f"Invalid component {component_name}.")
     if not can_access_qualcomm_ai_hub():
         return export_without_hub_access(
-            "whisper_tiny_en",
-            "Whisper-Tiny-En",
+            "whisper_tiny_multi",
+            "Whisper-Tiny-Multi",
             device or f"Device (Chipset {chipset})",
             skip_profiling,
             skip_inferencing,

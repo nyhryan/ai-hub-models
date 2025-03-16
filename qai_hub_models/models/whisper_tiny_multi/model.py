@@ -7,10 +7,9 @@ from __future__ import annotations
 from qai_hub_models.models._shared.whisper.model import Whisper
 
 MODEL_ID = __name__.split(".")[-2]
-WHISPER_VERSION = "tiny.en"
+WHISPER_VERSION = "tiny"
 
-
-class WhisperTinyEn(Whisper):
+class WhisperTinyMulti(Whisper):
     @classmethod
     def from_pretrained(cls):
         return Whisper.from_pretrained(WHISPER_VERSION)

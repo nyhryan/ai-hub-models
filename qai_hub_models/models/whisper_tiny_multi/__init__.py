@@ -5,4 +5,4 @@
 from qai_hub_models.models._shared.whisper.app import WhisperApp as App  # noqa: F401
 
 from .model import MODEL_ID  # noqa: F401
-from .model import WhisperTinyEn as Model  # noqa: F401
+from .model import WhisperTinyMulti as Model  # noqa: F401

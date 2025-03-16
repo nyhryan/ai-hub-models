@@ -3,11 +3,11 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # ---------------------------------------------------------------------
 from qai_hub_models.models._shared.whisper.demo import whisper_demo
-from qai_hub_models.models.whisper_tiny_en.model import WhisperTinyEn
+from qai_hub_models.models.whisper_tiny_multi.model import WhisperTinyMulti
 
 
 def main(is_test: bool = False):
-    whisper_demo(WhisperTinyEn, is_test)
+    whisper_demo(WhisperTinyMulti, is_test)
 
 
 if __name__ == "__main__":
